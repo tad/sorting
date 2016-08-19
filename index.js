@@ -19,7 +19,8 @@ const sorts = function theSorts() {
   return {
     noSort : noSort,
     selectSort : selectSort,
-    insertionSort : insertionSort
+    insertionSort : insertionSort,
+    shellSort : shellSort
   }
 
   function noSort(originalArray) {
@@ -62,6 +63,28 @@ const sorts = function theSorts() {
     return a;
   }
 
+  function shellSort(originalArray) {
+
+    let a = getSimpleShallowClone(originalArray);
+
+    let N = a.length;
+    let h = 1;
+    while (h < Math.trunc(N/3)) {
+      h = 3*h + 1;
+    }
+    h = Math.trunc(h);
+    while (h >= 1) {
+      for (let i = h; i < N; i++) {
+        for (let j = i; j >= h && less(a[j], a[j-h]); j -= h) {
+          exch(a, j, j-h);
+        }
+      }
+      h = Math.trunc(h/3);
+      console.log(h);
+    }
+    return a;
+  }
+
   function less(v, w) {
     return v.compareTo(w) < 0;
   }
@@ -82,7 +105,8 @@ const sorter = function arraySorter(){
   return {
     noSort: inputFile => doSort(inputFile, sorts.noSort),
     selectSort: inputFile => doSort(inputFile, sorts.selectSort),
-    insertionSort: inputFile => doSort(inputFile, sorts.insertionSort)
+    insertionSort: inputFile => doSort(inputFile, sorts.insertionSort),
+    shellSort: inputFile => doSort(inputFile, sorts.shellSort)
   }
 
   function doSort(inputFile, sortFunction) {
@@ -145,5 +169,5 @@ const SortCompare = function sortCompare() {
   }
 }();
 
-sorter.insertionSort('tiny.txt');
-// SortCompare.compareSorts('insertionSort', 'selectSort', 250, 100);
+// sorter.shellSort('tiny.txt');
+SortCompare.compareSorts('shellSort', 'insertionSort', 500, 100);

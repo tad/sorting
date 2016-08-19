@@ -9,3 +9,5 @@ The code that you see at any given time isn't great, and I will be refactoring
 it often.
 
 This is primarily for my own study efforts.
+
+NOTE: I'm running this in node version 6.3.1 to get the most ES6 possible.
