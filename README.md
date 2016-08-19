@@ -11,3 +11,7 @@ it often.
 This is primarily for my own study efforts.
 
 NOTE: I'm running this in node version 6.3.1 to get the most ES6 possible.
+
+NOTE: Due to the lack of proper tail recursion, mergeSort blows the heap
+somewhere between arrays with 1000000 and 10000000 elements (at least on my
+Macbook Pro with 8GB RAM). Hopefully this won't be an issue in Node 7.

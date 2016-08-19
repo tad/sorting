@@ -20,7 +20,8 @@ const sorts = function theSorts() {
     noSort : noSort,
     selectSort : selectSort,
     insertionSort : insertionSort,
-    shellSort : shellSort
+    shellSort : shellSort,
+    mergeSort : mergeSort
   }
 
   function noSort(originalArray) {
@@ -85,6 +86,37 @@ const sorts = function theSorts() {
     return a;
   }
 
+  function mergeSort(originalArray) {
+    let a = getSimpleShallowClone(originalArray);
+
+    let aux = [];
+    sort(a, 0, a.length - 1);
+    return a;
+
+    function sort(a, lo, hi) {
+      if (hi <= lo) return;
+      let mid = lo + Math.trunc((hi - lo)/2);
+      sort(a, lo, mid);
+      sort(a, mid+1, hi);
+      merge(a, lo, mid, hi);
+    }
+
+    function merge(a, lo, mid, hi) {
+      let i = lo, j = mid+1;
+
+      for(let k = lo; k <= hi; k++) {
+        aux[k] = a[k];
+      }
+
+      for(let k = lo; k <= hi; k++) {
+        if(i > mid)                     a[k] = aux[j++];
+        else if (j > hi)                a[k] = aux[i++];
+        else if (less(aux[j], aux[i]))  a[k] = aux[j++];
+        else                            a[k] = aux[i++];
+      }
+    }
+  }
+
   function less(v, w) {
     return v.compareTo(w) < 0;
   }
@@ -106,7 +138,8 @@ const sorter = function arraySorter(){
     noSort: inputFile => doSort(inputFile, sorts.noSort),
     selectSort: inputFile => doSort(inputFile, sorts.selectSort),
     insertionSort: inputFile => doSort(inputFile, sorts.insertionSort),
-    shellSort: inputFile => doSort(inputFile, sorts.shellSort)
+    shellSort: inputFile => doSort(inputFile, sorts.shellSort),
+    mergeSort: inputFile => doSort(inputFile, sorts.mergeSort)
   }
 
   function doSort(inputFile, sortFunction) {
@@ -169,5 +202,5 @@ const SortCompare = function sortCompare() {
   }
 }();
 
-// sorter.shellSort('tiny.txt');
-SortCompare.compareSorts('shellSort', 'insertionSort', 500, 100);
+// sorter.mergeSort('tiny.txt');
+SortCompare.compareSorts('mergeSort', 'shellSort', 10000000, 10);
