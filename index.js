@@ -31,7 +31,6 @@ const sorts = function theSorts() {
     // Won't work for objects that contain functions!!
     let a = getSimpleShallowClone(originalArray);
 
-    let t = process.hrtime();
     // First, find the smallest item in the array and exchange it with the first
     // entry (itself if it's the smallest). Then, find the next smallest item
     // and exchange it with the second entry. Continue in this way until the
