@@ -1,0 +1,26 @@
+{
+  "name": "sorting",
+  "version": "1.0.0",
+  "description": "Javascript versions of sorting algorithms found in Algorithms, 4th Edition by Kevin Sedgewick and Kevin Wayne",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^3.0.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tad/sorting.git"
+  },
+  "author": "Terry Donaghe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tad/sorting/issues"
+  },
+  "homepage": "https://github.com/tad/sorting#readme"
+}
