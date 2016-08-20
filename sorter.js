@@ -9,7 +9,8 @@ const sorter = function arraySorter(){
     insertionSort: inputFile => doSort(inputFile, sorts.insertionSort),
     shellSort: inputFile => doSort(inputFile, sorts.shellSort),
     mergeSort: inputFile => doSort(inputFile, sorts.mergeSort),
-    mergeBottomUpSort: inputFile => doSort(inputFile, sorts.mergeBottomUpSort)
+    mergeBottomUpSort: inputFile => doSort(inputFile, sorts.mergeBottomUpSort),
+    quickSort: inputFile => doSort(inputFile, sorts.quickSort)
   }
 
   function doSort(inputFile, sortFunction) {

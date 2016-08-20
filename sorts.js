@@ -1,5 +1,5 @@
 'use strict';
-const support = require('./compare-prototypes');
+const support = require('./support');
 const sorts = function theSorts() {
   return {
     noSort : noSort,
@@ -7,7 +7,8 @@ const sorts = function theSorts() {
     insertionSort : insertionSort,
     shellSort : shellSort,
     mergeSort : mergeSort,
-    mergeBottomUpSort: mergeBottomUpSort
+    mergeBottomUpSort: mergeBottomUpSort,
+    quickSort: quickSort
   }
 
   function noSort(originalArray) {
@@ -98,6 +99,35 @@ const sorts = function theSorts() {
       }
     }
     return a;
+  }
+
+  function quickSort(originalArray) {
+    let a = getSimpleShallowClone(originalArray);
+
+    support.shuffleArray(a);
+    console.log('Shuffled: ' + a);
+    sort(a, 0, a.length - 1);
+    return a;
+
+    function sort(a, lo, hi) {
+      if(hi <= lo) return;
+      let j = partition(a, lo, hi);
+      sort(a, lo, j-1);
+      sort(a, j+1, hi);
+    }
+
+    function partition(a, lo, hi) {
+      let i = lo, j = hi + 1;
+      v = a[lo];
+      while(true) {
+        while(less(a[++i], v)) if(j == hi) break;
+        while(less(v, a[--j])) if(j == lo) break;
+        if(i >= j) break;
+        exch(a, i, j);
+      }
+      exch(a, lo, j);
+      return j
+    }
   }
 
   function merge(aux, a, lo, mid, hi) {

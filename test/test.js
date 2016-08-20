@@ -2,7 +2,7 @@
 'use strict';
 const assert = require('assert');
 const sorts = require('../sorts');
-const support = require('../compare-prototypes');
+const support = require('../support');
 
 describe('Array', () => {
   describe('#indexOf()', () => {
