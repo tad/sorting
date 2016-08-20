@@ -1,4 +1,5 @@
 'use strict';
+const support = require('./compare-prototypes');
 const sorts = function theSorts() {
   return {
     noSort : noSort,
@@ -66,7 +67,6 @@ const sorts = function theSorts() {
         }
       }
       h = Math.trunc(h/3);
-      console.log(h);
     }
     return a;
   }

@@ -11,7 +11,8 @@
     "mocha": "^3.0.2"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node index"
   },
   "repository": {
     "type": "git",
