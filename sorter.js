@@ -8,7 +8,8 @@ const sorter = function arraySorter(){
     selectSort: inputFile => doSort(inputFile, sorts.selectSort),
     insertionSort: inputFile => doSort(inputFile, sorts.insertionSort),
     shellSort: inputFile => doSort(inputFile, sorts.shellSort),
-    mergeSort: inputFile => doSort(inputFile, sorts.mergeSort)
+    mergeSort: inputFile => doSort(inputFile, sorts.mergeSort),
+    mergeBottomUpSort: inputFile => doSort(inputFile, sorts.mergeBottomUpSort)
   }
 
   function doSort(inputFile, sortFunction) {

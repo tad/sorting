@@ -10,6 +10,8 @@ const SortCompare = function sortCompare() {
     if(sortAlgorithm === 'noSort') sorts.noSort(arrayToSort);
     if(sortAlgorithm === 'selectSort') sorts.selectSort(arrayToSort);
     if(sortAlgorithm === 'insertionSort') sorts.insertionSort(arrayToSort);
+    if(sortAlgorithm === 'mergeSort') sorts.mergeSort(arrayToSort);
+    if(sortAlgorithm === 'mergeBottomUpSort') sorts.mergeBottomUpSort(arrayToSort);
     t = process.hrtime(t);
     let milliseconds = (t[1]/1000000);
     milliseconds += t[0] * 1000;

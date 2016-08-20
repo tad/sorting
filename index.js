@@ -16,5 +16,5 @@ Number.prototype.compareTo = function(that) {
   return 0;
 }
 
-sorter.mergeSort('tiny.txt');
-SortCompare.compareSorts('mergeSort', 'shellSort', 100, 10);
+sorter.mergeBottomUpSort('tiny.txt');
+// SortCompare.compareSorts('mergeSort', 'shellSort', 100, 10);
