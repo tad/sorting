@@ -8,6 +8,12 @@ algorithms into modern, ES6 Javascript.
 The code that you see at any given time isn't great, and I will be refactoring
 it often.
 
+To Run: Look at index.js - the last two lines show examples of what you can do.
+Edit and then npm start or node index
+
+To Test:
+npm test 
+
 This is primarily for my own study efforts.
 
 NOTE: I'm running this in node version 6.3.1 to get the most ES6 possible.
