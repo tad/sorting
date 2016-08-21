@@ -23,7 +23,7 @@ const support = function supportFunctions() {
     while (m) {
 
       // Pick a remaining element…
-      i = Math.floor(Math.random() * m--);
+      i = Math.trunc(Math.random() * m--);
 
       // And swap it with the current element.
       t = array[m];

@@ -105,7 +105,6 @@ const sorts = function theSorts() {
     let a = getSimpleShallowClone(originalArray);
 
     support.shuffleArray(a);
-    console.log('Shuffled: ' + a);
     sort(a, 0, a.length - 1);
     return a;
 
@@ -117,16 +116,17 @@ const sorts = function theSorts() {
     }
 
     function partition(a, lo, hi) {
-      let i = lo, j = hi + 1;
-      v = a[lo];
+      let i = lo;
+      let j = hi + 1;
+      let v = a[lo];
       while(true) {
-        while(less(a[++i], v)) if(j == hi) break;
-        while(less(v, a[--j])) if(j == lo) break;
+        while(less(a[++i], v)) if(i === hi) break;
+        while(less(v, a[--j])) if(j === lo) break;
         if(i >= j) break;
         exch(a, i, j);
       }
       exch(a, lo, j);
-      return j
+      return j;
     }
   }
 

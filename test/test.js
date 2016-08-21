@@ -48,4 +48,11 @@ describe('Sorts', () => {
       assert.deepEqual(['A','B','C','D','E','F','G'], sorts.mergeBottomUpSort(['A','F','G','B','D','C','E']));
     });
   });
+  describe('quickSort', () => {
+    it('should properly sort the array', () => {
+      assert.deepEqual([1,2,3,4,5,6,7], sorts.quickSort([6,5,4,3,2,7,1]));
+      assert.deepEqual(['A','B','C','D','E','F','G'], sorts.quickSort(['A','F','G','B','D','C','E']));
+    });
+  });
+
 });

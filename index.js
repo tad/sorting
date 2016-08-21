@@ -5,9 +5,5 @@ const sorter = require('./sorter');
 const SortCompare = require('./sort-compare');
 const support = require('./support');
 
-// console.log(support.shuffleArray('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')).join(''));
-
-
-
 sorter.quickSort('tiny.txt');
-// SortCompare.compareSorts('mergeSort', 'mergeBottomUpSort', 100, 100);
+SortCompare.compareSorts('quickSort', 'mergeBottomUpSort', 1000, 100);
