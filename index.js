@@ -3,6 +3,7 @@
 'use strict';
 const sorter = require('./sorter');
 const SortCompare = require('./sort-compare');
+const support = require('./support');
 
-sorter.selectSort('tiny.txt');
-SortCompare.compareSorts('mergeSort', 'mergeBottomUpSort', 100, 100);
+sorter.quickSort('tiny.txt');
+SortCompare.compareSorts('quickSort', 'mergeBottomUpSort', 1000, 100);
